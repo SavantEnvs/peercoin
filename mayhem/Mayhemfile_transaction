@@ -1,0 +1,10 @@
+project: savantenvs/peercoin
+target: transaction
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+cmds:
+  - cmd: /mayhem/peercoin-fuzz
+    libfuzzer: true
+    timeout: 30
+    env:
+      FUZZ: transaction
